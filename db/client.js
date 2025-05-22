@@ -1,3 +1,7 @@
-import pg from "pg";
-const db = new pg.Client(process.env.DATABASE_URL);
+import {Client} from 'pg';
+import dotenv from 'dotenv'
+dotenv.config()
+
+const db = new Client({connectionString: process.env.DATABASE_URL});
+
 export default db;
